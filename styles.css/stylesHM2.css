@@ -1,0 +1,139 @@
+.outside-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    grid-template-rows: 100px 100px auto auto 100px 100px;
+    grid-template-areas: 
+        "Header"
+        "Menu"
+        "Hero"
+        "Main"
+        "Ad"
+        "Sidebar"
+        "Footer";
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header-cont{
+    grid-area: Header;
+    background-color: antiquewhite;
+    margin: 10px 5px 10px 5px;
+}
+.hero-container{
+    grid-area: Hero;
+    background-color: antiquewhite;
+    margin: 10px 5px 10px 5px;
+    background-image: url(/image/michal-parzuchowski-GikVY_KS9vQ-unsplash.jpg);
+    background-size: cover;
+}
+
+.menu-cont{
+    grid-area: Menu;
+    display: inline;
+}
+
+.main-cont{
+    grid-area: Main;
+    background-color: antiquewhite;
+    margin: 10px 5px 10px 5px;
+}
+
+.ad-container{
+    grid-area: Ad;
+    margin: 10px 5px 10px 5px;
+}
+
+.footer-container{
+    grid-area: Footer;
+    background-color: antiquewhite;
+    margin: 10px 5px 10px 0px;
+}
+.sidebar-cont{
+    grid-area: Sidebar;
+    background-color: antiquewhite;
+    margin: 10px 5px 10px 5px;
+}
+header{
+    grid-area: Header;
+}
+.search-cont{
+    grid-area: Search;
+}
+
+@media (min-width: 576px) {
+    .outside-box{
+        grid-template-columns: 300px 1fr 2fr;
+        grid-template-rows: 200px  200px auto 200px 100px;
+        grid-template-areas: 
+        "Header Header Header"
+        "Hero Hero Hero"
+        "Main Main Ad"
+        "Sidebar Sidebar Sidebar"
+        "Footer Footer Footer";
+    }
+    .header-cont{
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        grid-template-areas: "Header Menu Search";
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+@media (min-width: 992px) {
+    .outside-box{
+        grid-template-columns: 300px 1fr 400px;
+        grid-template-rows: 200px 200px auto 100px;
+        grid-template-areas: 
+        "Header Header Header"
+        "Hero Hero Ad"
+        "Main Main Sidebar"
+        "Footer Footer Footer";
+    }
+    .hero-container{
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+        background-image: url(/image/michal-parzuchowski-GikVY_KS9vQ-unsplash.jpg);
+        background-size: cover;
+        margin: 10px 0px 10px 0px;
+    }
+    .hero-text{
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+    .hero-button{
+        padding: 20px 40px;
+        font-size: 20px;
+    }
+    .ad-container{
+     justify-self: center;
+     margin: 10px 0px 10px 0px;
+     align-items: center;
+    }
+    .header-cont{
+        display: grid;
+        grid-template-areas: "Header Menu Search";
+        grid-template-columns: 30% 50% 20%;
+        justify-items: center;
+        align-items: center;
+    }
+    nav{
+        display: inline;
+    }
+}
+@media screen and (max-width: 575px){
+    .sidebar-cont{
+        display: none;
+    }
+    .hero-text{
+        display: none;
+    }
+    .hero-button{
+        background-color: antiquewhite;
+    }
+}
